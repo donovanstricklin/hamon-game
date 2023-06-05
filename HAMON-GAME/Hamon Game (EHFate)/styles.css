@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("BG-GIF.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #game-container {
+    text-align: center;
+  }
+
+  #game-title-container {
+    position: relative;
+    margin-top: -20px; /* Adjust the value as needed */
+  }
+
+  #game-title {
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  #play-button {
+    position: absolute;
+    display: inline-block;
+    background-color: #ff9900;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 115px; /* Adjust the value as needed */
+  }
+
+  #play-button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 100%;
+    background-color: #ffcc33;
+    opacity: 0.6;
+    border-radius: 50%;
+    transition: transform 0.6s ease-in-out;
+    z-index: -1;
+  }
+
+  #play-button:hover:before {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  
+  /* game.html page styles */
+
+
+  #player, #opponent {
+    position: absolute;
+    bottom: 0;
+  }
+
+  #player {
+    left: 0;
+  }
+
+  #opponent {
+    right: 0;
+  }
+
+  .character-image {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+  }
+
+  .healthbar {
+    width: 100px;
+    height: 10px;
+    background-color: green;
+  }
+
+  .word {
+    position: absolute;
+    color: purple;
+    font-size: 24px;
+    font-weight: bold;
+
+    animation-name: tiltAnimation;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  }
+
+  @keyframes tiltAnimation {
+    0% {
+      transform: rotate(-5deg) scale(1);
+    }
+    50% {
+      transform: rotate(5deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(-5deg) scale(1);
+    }
+  }
+  
+  .bullet {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+  }
